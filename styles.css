@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;800&family=Montserrat&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Rubik+Doodle+Shadow&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Merienda;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Preset selectors */
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sans {
+  font-family: sans-serif!important;
+}
+
+.head {
+  height: 125px;
+  gap: 1.5rem;
+}
+
+/* Head items */
+.g_h {
+  color: rgb(146, 93, 93);
+}
+
+.w_h {
+  color: rgb(85, 85, 206);
+}
+
+.e_h {
+  color: rgb(69, 109, 69);
+}
+
+/* Description below head */
+.lives_desc {
+  margin-bottom: 24px;
+  margin-top: -32px;
+}
+
+/* Description below lives */
+.game_desc {
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* Selection box */
+.choice_cn {
+  border: 4px solid black;
+  height: 250px;
+  width: 700px;
+  justify-content: space-evenly;
+}
+
+.game_icon {
+  height: 124px;
+  width: 124px;
+}
+
+/* Results */
+.result_cn {
+  margin: 16px;
+}
+.game_result {
+  height: 250px;
+  width: 700px;
+  border: 4px solid black;
+}
+
+/* Footer */
+.footer {
+  height: 100px;
+  background-color: grey;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon_credit {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
