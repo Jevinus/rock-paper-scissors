@@ -1,4 +1,15 @@
-let playerScore = 0;
+
+
+
+
+
+
+
+
+
+
+
+/* let playerScore = 0;
 let computerScore = 0;
 
 // Allows the cpu to assign a random value

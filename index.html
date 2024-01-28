@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Giants, Wizards, Elves</title>
 </head>
 <body>
 
     <div class="head flex">
-        <h1 class="g_h">Kings</h1>
-        <h1 class="w_h"> Wizards</h1>
-        <h1 class="e_h">Elves</h1>
+        <h1 class="king_head">Kings</h1>
+        <h1 class="wizard_head"> Wizards</h1>
+        <h1 class="elf_head">Elves</h1>
     </div>
 
     <div class="lives_desc flex">
@@ -19,20 +19,27 @@
     </div>
 
     <div class="flex game_desc">
-        <h3 class="sans">Kings beat Elves   |</h3>
-        <h3 class="sans"> Elves beat Wizards   |</h3>
-        <h3 class="sans"> Wizards beat Kings</h3>
+        <h3 class="sans">Kings beat Elves  |  Elves beat Wizards   |   Wizards beat Kings</h3>
     </div>
 
     <div class="flex">
-     <div class="flex choice_cn">
-        <div><img class="game_icon" src="king.png" alt="King"></div>
-        <div><img class="game_icon" src="wizard.png" alt="Wizard"></div>
-        <div><img class="game_icon" src="elf.png" alt="Elf"></div>
-     </div>
+      <div class="flex choice_cn">
+
+        <div>
+          <img class="game_icon" src="images/king.png" alt="King">
+        </div>
+
+        <div>
+          <img class="game_icon" src="images/wizard.png" alt="Wizard">
+        </div>
+
+        <div>
+          <img class="game_icon" src="images/elf.png" alt="Elf">
+        </div>
+      </div>
     </div>
 
-    <div class="flex result_cn">
+    <div class="flex result">
       <div class="game_result"></div>
     </div>
 
