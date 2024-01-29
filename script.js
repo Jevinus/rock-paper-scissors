@@ -1,3 +1,40 @@
+let playerScore = 0;
+let computerScore = 0;
+let round = 0;
+
+console.log("Choose your weapon 'rock' 'paper' 'scissors' ")
+
+
+// CPU selects random
+function computerSelection() {
+  Math.random["rock", "paper", "scissors"]
+}
+
+function playRound(playerSelection, computerSelection) {
+  if(
+     ( playerSelection === "king" && computerSelection === "elf") ||
+     ( playerSelection === "elf" && computerSelection === "wizard") ||
+     ( playerSelection === "wizard" && computerSelection === "king")
+    ) {
+  playerScore++
+  }
+  else if (
+     ( playerSelection === "king" && computerSelection === "wizard") ||
+     ( playerSelection === "elf" && computerSelection === "king") ||
+     ( playerSelection === "wizard" && computerSelection === "elf")
+    ) {
+  computerScore++
+  }
+  else if (
+     ( playerSelection === "king" && computerSelection === "king") ||
+     ( playerSelection === "elf" && computerSelection === "elf") ||
+     ( playerSelection === "wizard" && computerSelection === "wizard")
+    ) {
+  }
+  round++
+}
+
+console.log(playRound("king", "elf"))
 
 
 
@@ -7,9 +44,9 @@
 
 
 
+/* Original
 
-
-/* let playerScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
 // Allows the cpu to assign a random value
@@ -71,4 +108,4 @@ function game() {
 let computerSelection = computerPlay();
 let playerSelection = prompt("Choose your weapon");
 console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection)); */

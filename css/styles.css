@@ -83,6 +83,18 @@ body {
   border-right: 4px solid black;
 }
 
+/* Play again button */
+.play_again {
+  border: 3px solid rgba(153, 143, 143, 0.308);
+  padding: 24px 36px 24px 36px;
+  margin: -24px 24px 24px 24px;
+}
+
+.play_again:hover {
+  color: grey;
+  cursor: pointer;
+}
+
 /* Footer */
 .footer {
   height: 100px;
@@ -95,6 +107,7 @@ body {
   color: white;
 }
 
+/* Attribute Selectors */
 a:hover {
   color: black;
 }
