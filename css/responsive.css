@@ -21,7 +21,7 @@
     width: 100px;
   }
 
-  .game_result {
+  .result {
     width: 500px;
   }
 }
@@ -49,13 +49,13 @@
     width: 64x;
   }
 
-  .game_result {
+  .result {
     height: 150px;
     width: 380px;
   }
 
   .player_container {
-    height: 200px;
+    height: 150px;
     width: 150px;
   }
   
