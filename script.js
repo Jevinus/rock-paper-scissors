@@ -1,111 +1,126 @@
-let playerScore = 0;
-let computerScore = 0;
-let round = 0;
+let winners = [];
+const choices = ["king", "wizard", "elf"];
 
-console.log("Choose your weapon 'rock' 'paper' 'scissors' ")
-
-
-// CPU selects random
-function computerSelection() {
-  Math.random["rock", "paper", "scissors"]
+function resetGame() {
+  winners = [];
+  document.querySelector(".player_score").textContent = "Score: 0";
+  document.querySelector(".computer_score").textContent = "Score: 0";
+  document.querySelector(".ties").textContent = "Ties: 0";
+  document.querySelector(".winner").textContent = "";
+  document.querySelector(".player_choice").textContent = "";
+  document.querySelector(".computer_choice").textContent = "";
+  document.querySelector(".reset").style.display = "none";
 }
 
-function playRound(playerSelection, computerSelection) {
-  if(
-     ( playerSelection === "king" && computerSelection === "elf") ||
-     ( playerSelection === "elf" && computerSelection === "wizard") ||
-     ( playerSelection === "wizard" && computerSelection === "king")
-    ) {
-  playerScore++
-  }
-  else if (
-     ( playerSelection === "king" && computerSelection === "wizard") ||
-     ( playerSelection === "elf" && computerSelection === "king") ||
-     ( playerSelection === "wizard" && computerSelection === "elf")
-    ) {
-  computerScore++
-  }
-  else if (
-     ( playerSelection === "king" && computerSelection === "king") ||
-     ( playerSelection === "elf" && computerSelection === "elf") ||
-     ( playerSelection === "wizard" && computerSelection === "wizard")
-    ) {
-  }
-  round++
+function startGame() {
+  let imgs = document.querySelectorAll("img");
+  imgs.forEach((img) =>
+    img.addEventListener("click", () => {
+      if (img.id) {
+        playRound(img.id);
+      }
+    })
+  );
 }
 
-console.log(playRound("king", "elf"))
-
-
-
-
-
-
-
-
-
-/* Original
-
-let playerScore = 0;
-let computerScore = 0;
-
-// Allows the cpu to assign a random value
-function computerPlay() {
-  let rps = ["rock", "paper", "scissors"];
-  let random = rps[Math.floor(Math.random() * rps.length)];
-  return random;
-}
-// Registers player input, returns CPU input.
-function playRound(playerSelection, computerSelection) {
-
-  if (playerSelection === computerSelection) {
-    return ("It's a draw!");
+function playRound(playerChoice) {
+  let wins = checkWins();
+  if (wins >= 5) {
+    return;
   }
 
-  else if (playerSelection === "rock" & computerSelection === "paper") {
-    computerScore += 1
-    return ("You lose! :( paper beats rock!")
-  }
+  const computerChoice = computerSelect();
 
-  else if (playerSelection === "rock" & computerSelection === "scissors") {
-    playerScore += 1
-    return ("You win! Rock beats scissors!")
-  }
-
-  else if (playerSelection === "scissors" & computerSelection === "paper") {
-    playerScore += 1
-    return ("You win! Scissors beats paper!")
-  }
-
-  else if (playerSelection === "scissors" & computerSelection === "rock") {
-    computerScore += 1
-    return ("You lose! Rock beats scissors!")
-  }
-
-  else if (playerSelection === "paper" & computerSelection === "rock") {
-    playerScore += 1
-    return ("You win! Paper beats rock!")
-  }
-
-  else if (playerSelection === "paper" & computerSelection === "scissors") {
-    computerScore += 1
-    return ("You lose! Scissors beats paper!")
-  }
-
-  else if (computerScore >= 5) {
-    console.log("You lose the game!")
-  }
-
-  else if (playerScore >= 5) {
-    console.log("You win the game!")
+  const winner = checkWinner(playerChoice, computerChoice);
+  winners.push(winner);
+  tallyWins();
+  displayRound(playerChoice, computerChoice, winner);
+  wins = checkWins();
+  if (wins == 5) {
+    displayEnd();
   }
 }
 
-function game() {
+function displayEnd() {
+  let playerWins = winners.filter((item) => item == "Player").length;
 
+  if (playerWins == 5) {
+    document.querySelector(".winner").textContent =
+      "You Won 5 Games, Congrats!";
+  } else {
+    document.querySelector(".winner").textContent =
+      "Sorry, the computer won 5 times";
+  }
+  document.querySelector(".play_again").style.display = "flex";
 }
 
-let computerSelection = computerPlay();
-let playerSelection = prompt("Choose your weapon");
-console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection)); */
+function displayRound(playerChoice, computerChoice, winner) {
+  document.querySelector(".player_choice").textContent = `You Chose: ${
+    playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
+  }`;
+  document.querySelector(
+    ".computerChoice"
+  ).textContent = `The Computer Chose: ${
+    computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
+  }`;
+  displayRoundWinner(winner);
+}
+
+function displayRoundWinner(winner) {
+  if (winner == "Player") {
+    document.querySelector(".winner").textContent = "You won the Round!";
+  } else if (winner == "Computer") {
+    document.querySelector(".winner").textContent =
+      "The Computer won the Round";
+  } else {
+    document.querySelector(".winner").textContent = "The Round was a tie";
+  }
+}
+
+function tallyWins() {
+  const pWinCount = winners.filter((item) => item == "Player").length;
+  const cWinCount = winners.filter((item) => item == "Computer").length;
+  const ties = winners.filter((item) => item == "Tie").length;
+  document.querySelector(".player_score").textContent = `Score: ${pWinCount}`;
+  document.querySelector(".computer_score").textContent = `Score: ${cWinCount}`;
+  document.querySelector(".ties").textContent = `Ties: ${ties}`;
+}
+
+function computerSelect() {
+  const choice = choices[Math.floor(Math.random() * choices.length)];
+
+  document.querySelector(`.${choice}`).classList.add("active");
+
+  setTimeout(() => {
+    document.querySelector(`.${choice}`).classList.remove("active");
+  }, 700);
+
+  return choice;
+}
+
+function checkWins() {
+  const pWinCount = winners.filter((item) => item == "Player").length;
+  const cWinCount = winners.filter((item) => item == "Computer").length;
+  return Math.max(pWinCount, cWinCount);
+}
+
+function checkWinner(choice1, choice2) {
+  if (
+    (choice1 == "king" && choice2 == "elf") ||
+    (choice1 == "elf" && choice2 == "wizard") ||
+    (choice1 == "wizard" && choice2 == "king")
+  ) {
+    return "Player";
+  } else if (choice1 == choice2) {
+    return "Tie";
+  } else {
+    return "Computer";
+  }
+}
+
+function setWins() {
+  const pWinCount = winners.filter((item) => item == "Player").length;
+  const cWinCount = winners.filter((item) => item == "Computer").length;
+  const ties = winners.filter((item) => item == "Tie").length;
+}
+startGame();

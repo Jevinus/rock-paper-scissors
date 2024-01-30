@@ -27,27 +27,52 @@
       <div class="flex choice_cn">
 
         <div>
-          <img class="game_icon" src="images/king.png" alt="King">
+          <img class="pImg game_icon rock king" id="king" src="images/king.png" alt="King">
         </div>
 
         <div>
-          <img class="game_icon" src="images/wizard.png" alt="Wizard">
+          <img class="pImg game_icon paper wizard" id="wizard" src="images/wizard.png" alt="Wizard">
         </div>
 
         <div>
-          <img class="game_icon" src="images/elf.png" alt="Elf">
+          <img class="pImg game_icon scissors elf" id="elf" src="images/elf.png" alt="Elf">
         </div>
-      </div>
-    </div>
-
-    <div class="flex result">
-      <div class="game_result">
-        <div class="player_choice"></div>
       </div>
     </div>
 
     <div class="flex">
-      <button class="play_again flex">
+     <div class="result">
+     
+      <div>
+        <p clas="game_result"></p>
+      </div>
+
+        <div class="flex player_container">
+          <p  class="player_choice"></p>
+        </div>
+
+      <div class="score_list flex">
+        <div>
+          <p class="player_score score_text">Score: 0</p>
+        </div> 
+
+        <div>
+          <p class="computer_score score_text">Score: 0</p>
+        </div>
+
+        <div>
+          <p class="ties score_text">Ties: 0</p>
+        </div>
+
+        <div class="winnerDiv">
+          <h1 class="winner"></h1>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="flex">
+      <button class="play_again flex" onclick="resetGame()">
         <p>Play again?</p>
       </button>
     </div>
