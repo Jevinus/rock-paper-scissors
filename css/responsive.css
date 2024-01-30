@@ -24,6 +24,10 @@
   .result {
     width: 500px;
   }
+
+  .score_list {
+    bottom: 15%
+  }
 }
 
 @media (max-width: 567px) {
@@ -60,5 +64,9 @@
   }
   
   .play_again {padding: 18px 24px 18px 24px;
+  }
+
+  .score_list {
+    bottom: 25%
   }
 }

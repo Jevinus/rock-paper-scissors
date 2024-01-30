@@ -46,7 +46,7 @@ function displayEnd() {
 
   if (playerWins == 5) {
     document.querySelector(".winner").textContent =
-      "You Won 5 Games, Congrats!";
+      "You Won 5 Rounds, Congrats!";
   } else {
     document.querySelector(".winner").textContent =
       "Sorry, the computer won 5 times";
