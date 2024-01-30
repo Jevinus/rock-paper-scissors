@@ -1,6 +1,34 @@
 @media (max-width: 786px) {
   .head {
+    font-size: 18px;
+  }
+
+  .lives_desc {
     font-size: 14px;
+  }
+
+  .game_desc {
+    font-size: 12px;
+  }
+
+
+  .choice_cn {
+    width: 500px;
+  }
+
+  .game_icon {
+    height: 100px;
+    width: 100px;
+  }
+
+  .game_result {
+    width: 500px;
+  }
+}
+
+@media (max-width: 567px) {
+  .head {
+    font-size: 16px;
   }
 
   .lives_desc {
@@ -9,5 +37,28 @@
 
   .game_desc {
     font-size: 10px;
+  }
+
+  .choice_cn {
+    height: 150px;
+    width: 380px;
+  }
+
+  .game_icon {
+    height: 86px;
+    width: 64x;
+  }
+
+  .game_result {
+    height: 150px;
+    width: 380px;
+  }
+
+  .player_choice {
+    height: 150px;
+    width: 150px;
+  }
+  
+  .play_again {padding: 18px 24px 18px 24px;
   }
 }

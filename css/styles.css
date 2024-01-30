@@ -75,13 +75,13 @@ body {
   height: 175px;
   width: 600px;
   margin: 24px 0 48px 0;
-  border: 4px solid rgb(0, 0, 0, 0.75);
+  border: 4px solid rgba(0, 0, 0, 0.75);
 }
 
 .player_choice {
-  width: 25vw;
+  width: 200px;
   height: 175px;
-  border-right: 4px solid black;
+  border-right: 4px solid rgba(0, 0, 0, 0.75);
 }
 
 /* Play again button */
