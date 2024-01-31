@@ -81,8 +81,8 @@ function tallyWins() {
   const pWinCount = winners.filter((item) => item == "Player").length;
   const cWinCount = winners.filter((item) => item == "Computer").length;
   const ties = winners.filter((item) => item == "Tie").length;
-  document.querySelector(".player_score").textContent = `Score: ${pWinCount}`;
-  document.querySelector(".computer_score").textContent = `Score: ${cWinCount}`;
+  document.querySelector(".player_score").textContent = `Your Score: ${pWinCount}`;
+  document.querySelector(".computer_score").textContent = `CPU Score: ${cWinCount}`;
   document.querySelector(".ties").textContent = `Ties: ${ties}`;
 }
 
