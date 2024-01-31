@@ -26,7 +26,8 @@
   }
 
   .score_list {
-    bottom: 15%
+    left: 20%;
+    bottom: 50%
   }
 }
 
@@ -62,11 +63,12 @@
     height: 150px;
     width: 150px;
   }
-  
+
   .play_again {padding: 18px 24px 18px 24px;
   }
 
   .score_list {
-    bottom: 25%
+    left: 20%;
+    bottom: 50%
   }
 }

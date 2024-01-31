@@ -87,19 +87,19 @@ body {
 /* Results */
 .score_list {
   gap: 16px;
-  position: absolute;
-  left: 50%;
-  bottom: 1%
+  position: relative;
+  left: 15%;
+  bottom: 50%
 }
 .score_text {
   font-size: 12px;
 }
 .player_score {
-  
+
 }
 
 .computer_score {
-  
+
 }
 
 .ties {
