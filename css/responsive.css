@@ -59,6 +59,10 @@
     width: 380px;
   }
 
+  .score_text {
+    font-size: 10px;
+  }
+
   .player_container {
     height: 150px;
     width: 150px;
