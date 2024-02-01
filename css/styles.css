@@ -107,7 +107,7 @@ body {
 .play_again {
   border: 3px solid rgba(153, 143, 143, 0.308);
   padding: 24px 36px 24px 36px;
-  margin: -24px 24px 24px 24px;
+  margin: -24px 36 24px 36px;
 }
 
 .play_again:hover {
@@ -117,10 +117,12 @@ body {
 
 /* Footer */
 .footer {
+  margin-top: 58px;
   height: 100px;
   background-color: grey;
   flex-direction: column;
   gap: 10px;
+  justify-self: end;
 }
 
 .icon_credit {
