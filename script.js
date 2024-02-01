@@ -3,8 +3,8 @@ const choices = ["king", "wizard", "elf"];
 
 function resetGame() {
   winners = [];
-  document.querySelector(".player_score").textContent = "Score: 0";
-  document.querySelector(".computer_score").textContent = "Score: 0";
+  document.querySelector(".player_score").textContent = "Your Score: 0";
+  document.querySelector(".computer_score").textContent = "CPU Score: 0";
   document.querySelector(".ties").textContent = "Ties: 0";
   document.querySelector(".winner").textContent = "";
   document.querySelector(".player_choice").textContent = "";
@@ -46,10 +46,10 @@ function displayEnd() {
 
   if (playerWins == 5) {
     document.querySelector(".winner").textContent =
-      "You Won 5 Rounds, Congrats!";
+      "You Won 5 Rounds, you win!";
   } else {
     document.querySelector(".winner").textContent =
-      "Sorry, the computer won 5 times";
+      "The CPU won 5 times, game over.";
   }
   document.querySelector(".play_again").style.display = "flex";
 }
@@ -59,8 +59,8 @@ function displayRound(playerChoice, computerChoice, winner) {
     playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
   }`;
   document.querySelector(
-    ".computerChoice"
-  ).textContent = `The Computer Chose: ${
+    ".computer_choice"
+  ).textContent = `The CPU Chose: ${
     computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
   }`;
   displayRoundWinner(winner);
