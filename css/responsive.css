@@ -96,4 +96,8 @@
     left: 38%;
     bottom: 50%
   }
+
+  .footer {
+    margin-top: 7vh!important;
+  }
 }

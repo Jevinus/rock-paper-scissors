@@ -117,7 +117,7 @@ body {
 
 /* Footer */
 .footer {
-  margin-top: 15vh;
+  margin-top: 10vh;
   height: 100px;
   background-color: grey;
   flex-direction: column;
